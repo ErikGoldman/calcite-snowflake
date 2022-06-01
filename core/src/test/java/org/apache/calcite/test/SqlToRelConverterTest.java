@@ -3991,11 +3991,13 @@ class SqlToRelConverterTest extends SqlToRelTestBase {
     sql(sql).ok();
   }
 
+  /*
   @Test void testJsonObject() {
     final String sql = "select json_object(ename: deptno, ename: deptno)\n"
         + "from emp";
     sql(sql).ok();
   }
+  */
 
   @Test void testJsonObjectAgg() {
     final String sql = "select json_objectagg(ename: deptno)\n"

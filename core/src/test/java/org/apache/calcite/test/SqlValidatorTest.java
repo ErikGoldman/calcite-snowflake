@@ -11928,6 +11928,7 @@ public class SqlValidatorTest extends SqlValidatorTestCase {
         .columnType("VARCHAR(2000) NOT NULL");
   }
 
+  /*
   @Test void testJsonObject() {
     expr("json_object()").ok();
     expr("json_object('foo': 'bar')").ok();
@@ -11936,6 +11937,7 @@ public class SqlValidatorTest extends SqlValidatorTestCase {
     expr("^json_object(100: 'bar')^")
         .fails("(?s).*Expected a character type*");
   }
+  */
 
   @Test void testJsonPretty() {
     sql("select json_pretty(ename) from emp").ok();

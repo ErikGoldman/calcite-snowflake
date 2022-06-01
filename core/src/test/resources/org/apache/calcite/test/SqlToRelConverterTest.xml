@@ -3534,31 +3534,6 @@ LogicalProject(EXPR$0=[JSON_LENGTH($1, 'strict $')])
 ]]>
     </Resource>
   </TestCase>
-  <TestCase name="testJsonObject">
-    <Resource name="sql">
-      <![CDATA[select json_object(ename: deptno, ename: deptno)
-from emp]]>
-    </Resource>
-    <Resource name="plan">
-      <![CDATA[
-LogicalProject(EXPR$0=[JSON_OBJECT(FLAG(NULL_ON_NULL), $1, $7, $1, $7)])
-  LogicalTableScan(table=[[CATALOG, SALES, EMP]])
-]]>
-    </Resource>
-  </TestCase>
-  <TestCase name="testJsonObjectAgg">
-    <Resource name="sql">
-      <![CDATA[select json_objectagg(ename: deptno)
-from emp]]>
-    </Resource>
-    <Resource name="plan">
-      <![CDATA[
-LogicalAggregate(group=[{}], EXPR$0=[JSON_OBJECTAGG_NULL_ON_NULL($0, $1)])
-  LogicalProject(ENAME=[$1], DEPTNO=[$7])
-    LogicalTableScan(table=[[CATALOG, SALES, EMP]])
-]]>
-    </Resource>
-  </TestCase>
   <TestCase name="testJsonPredicate">
     <Resource name="sql">
       <![CDATA[select

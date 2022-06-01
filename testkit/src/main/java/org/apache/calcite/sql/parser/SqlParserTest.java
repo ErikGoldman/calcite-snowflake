@@ -9193,6 +9193,7 @@ public class SqlParserTest {
             + "'lax $' WITHOUT ARRAY WRAPPER EMPTY ARRAY ON EMPTY EMPTY OBJECT ON ERROR)");
   }
 
+    /*
   @Test void testJsonObject() {
     expr("json_object('foo': 'bar')")
         .ok("JSON_OBJECT(KEY 'foo' VALUE 'bar' NULL ON NULL)");
@@ -9220,9 +9221,10 @@ public class SqlParserTest {
     // You can see the generated codes that are located at method
     // SqlParserImpl#JsonObjectFunctionCall. Looking ahead fails
     // immediately after seeking the tokens <KEY> and <COLON>.
-    expr("json_object(key: value)")
-        .ok("JSON_OBJECT(KEY `KEY` VALUE `VALUE` NULL ON NULL)");
+    //expr("json_object(key: value)")
+    //    .ok("JSON_OBJECT(KEY `KEY` VALUE `VALUE` NULL ON NULL)");
   }
+  */
 
   @Test void testJsonType() {
     expr("json_type('11.56')")
@@ -9277,6 +9279,7 @@ public class SqlParserTest {
         .ok("JSON_REMOVE('[\"a\", [\"b\", \"c\"], \"d\"]', '$[1]', '$[0]')");
   }
 
+  /*
   @Test void testJsonObjectAgg() {
     expr("json_objectagg(k_column: v_column)")
         .ok("JSON_OBJECTAGG(KEY `K_COLUMN` VALUE `V_COLUMN` NULL ON NULL)");
@@ -9293,6 +9296,7 @@ public class SqlParserTest {
             + "JSON_OBJECT(KEY `K_COLUMN` VALUE `V_COLUMN` NULL ON NULL) "
             + "FORMAT JSON NULL ON NULL)");
   }
+  */
 
   @Test void testJsonArray() {
     expr("json_array('foo')")

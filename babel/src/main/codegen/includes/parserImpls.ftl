@@ -213,7 +213,7 @@ void InfixFieldReference(List<Object> list, ExprContext exprContext, Span s) :
     final SqlDataTypeSpec dt;
 }
 {
-    <INFIX_FIELD_REFERENCE> {
+    <COLON> {
         checkNonQueryExpression(exprContext);
     }
     dt = DataType() {

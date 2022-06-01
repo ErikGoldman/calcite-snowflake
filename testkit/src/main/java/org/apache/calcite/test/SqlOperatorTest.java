@@ -4378,6 +4378,7 @@ public class SqlOperatorTest {
     f.checkNull("json_remove(cast(null as varchar), '$')");
   }
 
+  /*
   @Test void testJsonObject() {
     final SqlOperatorFixture f = fixture();
     f.checkString("json_object()", "{}", "VARCHAR(2000) NOT NULL");
@@ -4421,6 +4422,7 @@ public class SqlOperatorTest {
         values,
         isSingle("{\"foo\":\"bar\",\"foo3\":\"bar3\"}"));
   }
+  */
 
   @Test void testJsonValueExpressionOperator() {
     final SqlOperatorFixture f = fixture();

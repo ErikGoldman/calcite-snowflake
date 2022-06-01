@@ -5482,6 +5482,7 @@ class RelToSqlConverterTest {
     sql(query).ok(expected);
   }
 
+  /*
   @Test void testJsonObject() {
     String query = "select json_object(\"product_name\": \"product_id\") from \"product\"";
     final String expected = "SELECT "
@@ -5490,6 +5491,7 @@ class RelToSqlConverterTest {
     sql(query).ok(expected);
   }
 
+
   @Test void testJsonObjectAgg() {
     String query = "select json_objectagg(\"product_name\": \"product_id\") from \"product\"";
     final String expected = "SELECT "
@@ -5497,6 +5499,8 @@ class RelToSqlConverterTest {
         + "FROM \"foodmart\".\"product\"";
     sql(query).ok(expected);
   }
+  */
+
 
   @Test void testJsonPredicate() {
     String query = "select "
